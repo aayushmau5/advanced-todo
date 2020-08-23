@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo - Make Your Life Productive</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet"> >
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+
+<body>
+    <h1 class="header">Stuff todo</h1>
+    <div class="container">
+        <div class="project">
+            <h3 class="project__heading">Projects</h3>
+            <ul class="project__lists" data-lists>
+                <li class="list active">One</li>
+                <li class="list">Two</li>
+                <li class="list">Three</li>
+                <li class="list">Four</li>
+            </ul>
+            <form action="#" class="project__form" data-new-list-form>
+                <button class="project__button"><i class="fa fa-plus"></i></button>
+                <input type="text" class="project__input" placeholder="Add a project...." data-new-list-input>
+
+            </form>
+        </div>
+        <div class="todos">
+            <div class="todo" data-list-display-container>
+                <div class="todo__header">
+                    <div class="todo__header-heading" data-list-tile>One</div>
+                </div>
+                <div class="todo__data" data-tasks>
+                    <div class="task">
+                        <input type="checkbox" id="task-1">
+                        <label class="task-label" for="task-1"><span></span>One</label>
+                    </div>
+                    <div class="task">
+                        <input type="checkbox" id="task-2">
+                        <label class="task-label" for="task-2"><span></span>Two</label>
+                    </div>
+                    <div class="task">
+                        <input type="checkbox" id="task-3">
+                        <label class="task-label" for="task-3"><span></span>Three</label>
+                    </div>
+                    <div class="task">
+                        <input type="checkbox" id="task-4">
+                        <label class="task-label" for="task-4"><span></span>Four</label>
+                    </div>
+                </div>
+                <form action="#" class="todo__form" data-todo-form>
+                    <button class="todo__button"><i class="fa fa-plus"></i></button>
+                    <input type="text" class="todo__input" placeholder="Add a todo...." data-todo-input>
+                </form>
+            </div>
+            <button class="clear-btn" data-clear-completed-task>Clear Completed Tasks</button>
+            <button class="delete-btn" data-delete-list-button>Delete List</button>
+        </div>
+    </div>
+
+    <template id="task-template">
+        <div class="task">
+            <input type="checkbox">
+            <label class="task-label"><span></span></label>
+        </div>
+    </template>
+    <script src="main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+.project {
+  grid-area: project;
+  font-size: 2rem;
+
+  &__heading {
+    font-size: 4rem;
+  }
+
+  &__lists {
+    list-style: circle;
+    padding-left: 2rem;
+    line-height: 1.7;
+    font-weight: 300;
+    cursor: pointer;
+  }
+
+  .active {
+    font-weight: bold;
+  }
+
+  .list {
+    &:hover {
+      color: #eee;
+    }
+  }
+
+  &__form {
+    display: flex;
+    margin-top: 1rem;
+  }
+
+  &__input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    padding: 1rem;
+    width: 75%;
+    font-size: 2rem;
+    color: white;
+
+    &::placeholder {
+      color: white;
+      opacity: 0.6;
+    }
+
+    &:focus {
+      border: none;
+      outline: none;
+      border-bottom: 2px solid white;
+    }
+  }
+
+  &__button {
+    background-color: transparent;
+    font-size: 2.5rem;
+    border: none;
+    color: white;
+    transition: all 0.3s;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+  }
+  &__button:hover {
+    background: white;
+    color: #1fa7f5;
+  }
+}
