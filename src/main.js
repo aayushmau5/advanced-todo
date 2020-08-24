@@ -1,3 +1,5 @@
+import { returnListObject, returnTodoObject } from "./modules/returnObject";
+
 const projectList = document.querySelector("[data-lists]");
 const projectForm = document.querySelector("[data-new-list-form]");
 const projectFormInput = document.querySelector("[data-new-list-input]");
@@ -12,14 +14,6 @@ const deleteTasksButton = document.querySelector("[data-clear-completed-task]");
 let lists = [];
 
 let selectedProject;
-
-const returnListObject = (name) => {
-  return { id: Date.now().toString(), name: name, tasks: [] };
-};
-
-const returnTodoObject = (todo) => {
-  return { id: Date.now().toString(), todo: todo, complete: false };
-};
 
 projectForm.addEventListener("submit", (e) => {
   e.preventDefault();
