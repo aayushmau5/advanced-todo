@@ -1,0 +1,26 @@
+{
+  "name": "todo-vanilla-js",
+  "version": "1.0.0",
+  "description": "Made in Vanilla JS",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --progress --mode=production",
+    "watch": "webpack --watch --mode=production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aayushmau5/advanced-todo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aayushmau5/advanced-todo/issues"
+  },
+  "homepage": "https://github.com/aayushmau5/advanced-todo#readme",
+  "devDependencies": {
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  }
+}
