@@ -1,0 +1,18 @@
+.header {
+  font-size: calc(7vw + 2rem);
+  text-align: center;
+  color: rgba(0, 0, 0, 0.3);
+  margin-top: -5rem;
+}
+
+.container {
+  color: white;
+  display: grid;
+  grid:
+    ".... project todo ...." auto / 1fr minmax(100px, 300px) minmax(
+      250px,
+      500px
+    )
+    1fr;
+  gap: 24rem;
+}

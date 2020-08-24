@@ -1,0 +1,127 @@
+.todos {
+  grid-area: todo;
+}
+
+.todo {
+  background-color: #fff;
+  color: #333;
+  font-size: 2rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+  margin-bottom: 4rem;
+
+  &__header {
+    background-color: #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+
+    &-heading {
+      font-size: 4rem;
+      font-weight: bold;
+    }
+
+    &-count {
+      color: gray;
+    }
+  }
+
+  &__form {
+    display: flex;
+    margin-top: 1rem;
+    padding: 2rem;
+  }
+
+  &__input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid black;
+    padding: 1rem;
+    width: 100%;
+    font-size: 2rem;
+    color: black;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__button {
+    background-color: transparent;
+    font-size: 2.5rem;
+    border: none;
+    color: black;
+    transition: all 0.3s;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__button:hover {
+    background: black;
+    color: #fff;
+  }
+}
+
+.clear-btn,
+.delete-btn {
+  color: white;
+  background-color: transparent;
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.clear-btn:hover,
+.delete-btn:hover {
+  color: gray;
+}
+
+.clear-btn:focus,
+.delete-btn:focus {
+  outline: none;
+}
+
+.todo__data {
+  padding: 2rem;
+}
+
+.task {
+  border-bottom: 1px solid #eee;
+  padding: 1rem;
+
+  input {
+    display: none;
+  }
+  input:checked + label {
+    color: gray;
+    text-decoration: line-through;
+  }
+
+  label {
+    position: relative;
+  }
+
+  label span {
+    margin-right: 3rem;
+  }
+
+  label span::before {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    content: "";
+    display: inline-block;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+    border: 3px solid gray;
+  }
+
+  input:checked + label span::before {
+    border-color: rgb(199, 199, 199);
+    background-color: rgb(199, 199, 199);
+  }
+}
