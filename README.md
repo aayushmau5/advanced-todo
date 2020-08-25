@@ -5,6 +5,6 @@ Made in Vanilla JS
 
 Add features
 
-- [ ] Modules and Webpack
+- [x] Modules and Webpack
+- [ ] Explaination of the code
 - [ ] Responsive Design for mobile devices
-- [ ] Some UI changes
