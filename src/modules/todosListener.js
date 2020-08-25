@@ -1,5 +1,6 @@
 import { returnTodoObject } from "./returnObject";
 import { clearTodos } from "./clearTasks";
+import datas from "./list";
 
 const todoForm = (function () {
   const todoTitle = document.querySelector("[data-list-tile]");
@@ -7,8 +8,10 @@ const todoForm = (function () {
   const todoForm = document.querySelector("[data-todo-form]");
   const todoFormInput = document.querySelector("[data-todo-input]");
 
-  const renderTodos = (lists, selectedProject) => {
-    const selectedTodoList = lists.find((list) => list.id === selectedProject);
+  const renderTodos = () => {
+    const selectedTodoList = datas.getLists.find(
+      (list) => list.id === datas.getSelectedProject
+    );
     todoTitle.innerText = selectedTodoList.name;
     clearTodos();
     selectedTodoList.tasks.forEach((task) => {
@@ -30,32 +33,34 @@ const todoForm = (function () {
     });
   };
 
-  const todoFormListener = (lists, selectedProject) => {
+  const todoFormListener = () => {
     todoForm.addEventListener("submit", (e) => {
       e.preventDefault();
       const todoInput = todoFormInput.value;
       todoFormInput.value = "";
       if (todoInput === "") return;
       const todoObject = returnTodoObject(todoInput);
-      const selectedTodoList = lists.find(
-        (list) => list.id === selectedProject
-      );
+      const selectedTodoList = datas.getLists.find((list) => {
+        if (list.id === datas.getSelectedProject) {
+          return list;
+        }
+      });
       selectedTodoList.tasks.push(todoObject);
-      renderTodos(lists, selectedProject);
+      renderTodos();
     });
   };
 
-  const todoTaskListener = (lists, selectedProject) => {
+  const todoTaskListener = () => {
     todoTaskContainer.addEventListener("click", (e) => {
       if (e.target.tagName.toLowerCase() === "input") {
-        const selectedTodoList = lists.find(
-          (list) => list.id === selectedProject
+        const selectedTodoList = datas.getLists.find(
+          (list) => list.id === datas.getSelectedProject
         );
         const task = selectedTodoList.tasks.find(
           (task) => task.id === e.target.id
         );
         task.complete = !task.complete;
-        renderTodos(lists, selectedProject);
+        renderTodos();
       }
     });
   };
